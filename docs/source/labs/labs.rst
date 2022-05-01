@@ -120,7 +120,7 @@ Command funciona como un patrón de encapsulamiento, es útil para ejecutar func
 **Diagramas UML**
 
 .. uml::
-@startuml
+   @startuml
 
    class eieManager
    class eieDevice
@@ -153,6 +153,5 @@ Command funciona como un patrón de encapsulamiento, es útil para ejecutar func
    eieDevice --|> CommandManager
 
    CommandManager --* Command
-
 
    @enduml
