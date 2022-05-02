@@ -13,6 +13,7 @@ El patrón de diseño proxy funcionaria perfectamente para solucionar el problem
 * GroupManager.
 * TransportClient.
 
+El patrón de diseño Command lo que hace es encapsular toda la información necesaria para realizar una acción cuando sea requerido.  Entonces con la implementación de este patrón se podría tener toda la información necesaria para ejecutar un comando y cuando cualquier dispositivo especifico requiera ejecutar alguno, lo podrá hacer sin problema debido a que se gracias al patrón se cuenta con todo lo necesario para que lo logre hacer de manera adecuada. También se puede encapsular toda la información posterior a la ejecución de un comando, y para completar el ciclo, se podrá esperar a que se tenga la respuesta y ya esta sea generada, utilizará la capsula generada posteriormente para finalizar.
 
 
 Diagramas UML
