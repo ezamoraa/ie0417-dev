@@ -24,57 +24,59 @@ Diagrma de clases de los componentes de eieManager:
 .. uml::
 
   	@startuml
+
 	title Relationships - Class Diagram (eieManager)
-
-
 	class EieManager 
-
-	class APIServer{
-	  +void ClientRequest()
+	class APIServer{ 
+	+void ClientRequest()
 	}
-	class CommandRegistry{
-	  +void CheckCommand()
+	class CommandRegistry{ 
+	+void CheckCommand()
 	}
 	class CommandInvoker{
-	  +void RunCommand()
+	 +void RunCommand()
 	}
 	class GroupManager{
-	  +void ManageGroup()
+	 +void ManageGroup()
 	}
 	class ConfigHandler{
-	  +void Configuration()
+	 +void Configuration()
 	}
-	class DeviceManager{
-	  +viod DeviceLifeCycle()
+	class DeviceManager{ 
+	+viod DeviceLifeCycle()
 	}
-	class TransportClient{
-	  +void CommunicationProtocol()
+	class TransportClient{ 
+	+void CommunicationProtocol()
 	}
 	class DatabaseHandler{
-	  +void StoreData()
+	 +void StoreData()
 	}
 	class Device
 	class Group
 	class CommandInfo{
-	  +void ExtractCommandInformation()
+	 +void ExtractCommandInformation()
 	}
 
 
-
-
 	EieManager "1" *-down- "1" ConfigHandler: Composition
-	ConfigHandler  <.down-  DeviceManager: Use
-	ConfigHandler  <.down-  GroupManager: Use
-	APIServer "1" *-down- "1" CommandInfo: Composition
-	CommandInfo "1" *-down- "1" CommandRegistry: Composition
-	APIServer <|-right- TransportClient: Inheritance
-	CommandRegistry "1" *-down- "1" CommandInvoker: Composition
+	EieManager "1" *-down- "1" GroupManager: Composition
+	EieManager "1" *-down- "1" DeviceManager: Composition
+	ConfigHandler <.down- DeviceManager: Use
+	ConfigHandler <.down- GroupManager: Use
+	APIServer <.down- CommandInfo: Use
+	CommandInfo <.down- CommandRegistry: Use
+	TransportClient <.up- APIServer: Use
+	CommandRegistry <|-down- CommandInvoker: Inheritance
 	ConfigHandler <.down- DatabaseHandler: Use
 	DeviceManager <|-down- Device: Inheritance
 	GroupManager <|-down- Group: Inheritance
-	TransportClient "1" *-down- "1" EieManager: Composition
+	EieManager "1" *-down- "1" APIServer: Composition
+	Group "1" *-down- "1" TransportClient: Composition
+	Device "1" *-down- "1" TransportClient: Composition
+	CommandInvoker <.up- DeviceManager: Use
+	CommandInvoker <.up- GroupManager: Use
 	@enduml
-
+	
 Diagrma de clases de los componentes de eieDevice:
 
 .. uml::
@@ -106,7 +108,7 @@ Diagrma de clases de los componentes de eieDevice:
 
 Diagrama de secuencia (El cliente envía un comando a un dispositivo específico):
 
-.. uml ::
+.. uml::
 	@startuml
 	Client -> APIServer: Send Command
 
@@ -162,7 +164,7 @@ Diagrama de secuencia (El cliente envía un comando a un dispositivo específico
 
 Diagrama de secuencia (El cliente envía un comando a un grupo de broadcast):
 
-.. uml ::
+.. uml::
 	@startuml
 	Client -> APIServer: Send Command
 
