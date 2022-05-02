@@ -18,7 +18,8 @@ El patrón de diseño proxy funcionaria perfectamente para solucionar el problem
 Diagramas UML
 =============
 
-Diagrma de clases de los componentes de eieManager
+Diagrma de clases de los componentes de eieManager:
+
 .. uml::
 
   	@startuml
@@ -72,5 +73,148 @@ Diagrma de clases de los componentes de eieManager
 	GroupManager <|-down- Group: Inheritance
 	TransportClient "1" *-down- "1" EieManager: Composition
 	@enduml
+
+Diagrma de clases de los componentes de eieDevice:
+
+.. uml::
+
+	@startuml
+
+	title Relationships - Class Diagram (eieManager)
+
+
+	class EieDevice 
+
+	class TransportServer{
+	  +void SendReply()
+
+	}
+	class CommandManager{
+	  +void RunCommand()
+
+	}
+	class Command{
+	  +void ImplementFunctionality()
+
+	}
+
+	EieDevice "1" *-down- "1" CommandManager: Composition
+	EieDevice "1" *-down- "1" TransportServer: Composition
+	CommandManager <|-down- Command: Inheritance
+	@endumlDevic
+
+Diagrama de secuencia (El cliente envía un comando a un dispositivo específico):
+
+.. uml ::
+	@startuml
+	Client -> APIServer: Send Command
+
+	alt successful case
+
+	   APIServer -> TransportClient: Protocol Request
+	   
+	   alt successful case
+
+	   TransportClient -> APIServer: Protocol Specification 
+	   
+	   else some kind of failure
+
+	   TransportClient -> APIServer: Protocol Specification Failure
+	    end
+	   
+	   CommandInfo -> APIServer: Command Information Request
+
+	   alt successful case
+
+	   APIServer -> CommandInfo: Command Information
+	   
+	   else some kind of failure
+
+	   APIServer -> CommandInfo: Command Information Failure
+	   end
+	 
+	   CommandInfo -> CommandRegistry: Command Verification Request
+
+	   alt successful case
+
+	   CommandRegistry -> CommandInvoker: Valid Command
+	   
+	   else some kind of failure
+
+	   CommandRegistry -> CommandInfo: Invalid Command
+	   end
+	   
+	   CommandInvoker -> DeviceManager: specifies command and device
+
+	   DeviceManager -> Device: Run Command
+
+	    
+
+
+
+	else some kind of failure
+
+	    APIServer -> Client: Please repeat
+
+	end
+	@enduml
+
+Diagrama de secuencia (El cliente envía un comando a un grupo de broadcast):
+
+.. uml ::
+	@startuml
+	Client -> APIServer: Send Command
+
+	alt successful case
+
+	   APIServer -> TransportClient: Protocol Request
+	   
+	   alt successful case
+
+	   TransportClient -> APIServer: Protocol Specification 
+	   
+	   else some kind of failure
+
+	   TransportClient -> APIServer: Protocol Specification Failure
+	    end
+	   
+	   CommandInfo -> APIServer: Command Information Request
+
+	   alt successful case
+
+	   APIServer -> CommandInfo: Command Information
+	   
+	   else some kind of failure
+
+	   APIServer -> CommandInfo: Command Information Failure
+	   end
+	 
+	   CommandInfo -> CommandRegistry: Command Verification Request
+
+	   alt successful case
+
+	   CommandRegistry -> CommandInvoker: Valid Command
+	   
+	   else some kind of failure
+
+	   CommandRegistry -> CommandInfo: Invalid Command
+	   end
+	   
+	   CommandInvoker -> DeviceGroup: specifies command and device
+
+	   DeviceGroup -> Group: Run Command
+
+	    
+
+
+
+	else some kind of failure
+
+	    APIServer -> Client: Please repeat
+
+	end
+	@enduml
+
+
 
 
