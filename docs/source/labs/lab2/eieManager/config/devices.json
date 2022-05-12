@@ -1,0 +1,35 @@
+{
+  "devices":[
+    {
+      "name":"pc-lenovo",
+      "commands":[
+	"connected",
+	"wifiEnabled",
+	"secured",
+	"recognized"
+      ],
+      "connectionInfo": "55.166.188.178"
+    },
+    {
+      "name":"pc-mac",
+      "commands":[
+	"connected",
+	"wifiEnabled",
+	"secured",
+	"recognized"
+      ],
+      "connectionInfo": "127.23.4.0:7777"
+    },
+    {
+      "name":"tel-iPhone",
+      "commands": [
+	"connected",
+	"wifiEnabled",
+	"bluetooth",
+	"secured",
+	"recognized"
+      ],
+      "connectionInfo" : "127.34.3.0:4470"
+    }
+  ]
+}
