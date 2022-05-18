@@ -4,7 +4,7 @@ from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
 import json
 from utils import readJSON
-from device.deviceManager import DeviceManager 
+from device.deviceManager import DeviceManager
 
 path = '../../config/devices.json'
 print(path)
@@ -44,11 +44,11 @@ print(get_devices(1))
 
 @app.get('/devices')
 async def get_all_devices(id: Optional[int] = Query(None,
-                    title="Device Id",
-                    description="Filter device by id"),
-                    name: Optional[str] = Query(None,
-                    title="Device name",
-                    description="The device name to filter for")):
+                          title="Device Id",
+                          description="Filter device by id"),
+                          name: Optional[str] = Query(None,
+                          title="Device name",
+                          description="The device name to filter for")):
     device1 = [d for d in devices if d['id'] == id]
 
     if name is None:
@@ -112,10 +112,11 @@ def delete_device(device_id: int):
             json.dump(devices, f)
     else:
         raise HTTPException(status_code=404, detail=f"There is no {device_id}")
+
+
 @app.get('/device/{device_command}')
 def get_device_commands(device_command: str):
     dev_mngr = DeviceManager(path)
-    name = dev_mngr.get_device_names()
     dtype = dev_mngr.get_devices_types()
     if device_command in dtype:
         name_per_type = dev_mngr.get_device_names_per_type(device_command)
@@ -123,5 +124,6 @@ def get_device_commands(device_command: str):
         for i in name_per_type:
             executed_commands.append(dev_mngr.create_device_read_cmd(i))
         return executed_commands
-    else: 
-        raise HTTPException(status_code=404, detail=f"There is no {device_command}")
+    else:
+        raise HTTPException(status_code=404,
+                            detail=f"There is no {device_command}")

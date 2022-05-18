@@ -30,7 +30,6 @@ def main():
     device_cmd_runner.start()
     alert_cmd_runner.start()
 
-
     # Generate read commands for temp sensors
     conn_devices_name = device_mgr.get_device_names_per_type(device_type_name)
     for _ in range(num_read_commands):

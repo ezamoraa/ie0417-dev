@@ -1,11 +1,10 @@
 import json
-from typing import Optional, List, Dict
+from typing import List, Dict
 
-from .commands.command import Command
-from . import connected
-from . import wifiEnabled
-from .deviceFactory import DeviceFactory
-from .devices import Device, DeviceAnalyzer, DeviceReadCommand
+from .commands.command import Command  # type: ignore
+from .deviceFactory import DeviceFactory  # type: ignore
+from .devices import Device, DeviceReadCommand  # type: ignore
+
 
 class DeviceManager:
     """
@@ -18,7 +17,7 @@ class DeviceManager:
         self.devices: Dict[str, Device] = {}
         self.devices_per_type: Dict[str, Dict[str, Device]] = {}
         self.init_config()
-    
+
     def _init_devices_per_type(self):
         """
         Initializes a device per type dictionary
@@ -29,28 +28,34 @@ class DeviceManager:
             if dtype not in self.devices_per_type:
                 self.devices_per_type[dtype] = {}
             self.devices_per_type[dtype][name] = device
-        
+
     def init_config(self) -> None:
         """
         Initializes the manager configuration.
         """
-        ## Read the config file
+        # Read the config file
         with open(self.json_file) as json_file:
             config_info = json.load(json_file)
             devices_info = config_info
-            
+
             # Create devices
             for device_info in devices_info:
                 for device_type in device_info["commands"]:
                     if device_type == "connected":
                         name = device_info["name"]
                         dtype = device_type
-                        self.devices[name] = self.device_factory(name, dtype)
+                        ipAddress = device_info["connectionInfo"]
+                        self.devices[name] = self.device_factory(name,
+                                                                 dtype,
+                                                                 ipAddress)
                     else:
                         if device_type == "wifiEnabled":
                             name = device_info["name"]
                             dtype = device_type
-                            self.devices[name] = self.device_factory(name, dtype)
+                            ipAddress = device_info["connectionInfo"]
+                            self.devices[name] = self.device_factory(name,
+                                                                     dtype,
+                                                                     ipAddress)
         self._init_devices_per_type()
 
     def get_devices_types(self) -> List[str]:
@@ -58,12 +63,13 @@ class DeviceManager:
         Returns the list of the devices types.
         """
         return [type for type in self.devices_per_type.keys()]
-    
+
     def get_device_names(self) -> List[str]:
         """
         Returns the list of the devices names.
         """
         return [name for name in self.devices.keys()]
+
     def get_device_names_per_type(self, dtype: str) -> List[str]:
         """
         Returns the list of devices names for a device type.
@@ -73,12 +79,12 @@ class DeviceManager:
         if type_devices is not None:
             names = [name for name in type_devices.keys()]
         return names
-    
+
     def create_device_read_cmd(
         self,
-        device_name: str 
+        device_name: str
     ) -> Command:
-        """ 
+        """
         Creates a command to read a device.
 
         :param str device_name: Name of the device to read.
@@ -88,5 +94,3 @@ class DeviceManager:
         """
         device = self.devices[device_name]
         return DeviceReadCommand(device)
-                            
-

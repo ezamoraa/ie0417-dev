@@ -1,10 +1,11 @@
 """
 Devices module entry point.
 """
-from .devices import Device
+from .devices import Device  # type: ignore
 
-from .connected import ConnectedDevice
-from .wifiEnabled import WifiEnabledDevice
+from .connected import ConnectedDevice  # type: ignore
+from .wifiEnabled import WifiEnabledDevice  # type: ignore
+
 
 class DeviceFactory():
     """
@@ -15,14 +16,15 @@ class DeviceFactory():
             "connected": ConnectedDevice,
             "wifiEnabled": WifiEnabledDevice,
         }
+
     @property
     def supported_types(self):
         """
         Returns the list of names for the supported device types.
         """
         return [dtype for dtype in self._device_type_to_cls.keys()]
-    
-    def __call__(self, name: str, dtype: str) -> Device:
+
+    def __call__(self, name: str, dtype: str, ipAddress: str) -> Device:
         """
         Creates the device.
 
@@ -30,4 +32,4 @@ class DeviceFactory():
         :param str dtype: Device type.
         """
         device_cls = self._device_type_to_cls[dtype]
-        return device_cls(name)
+        return device_cls(name, ipAddress)

@@ -1,7 +1,7 @@
-from typing import Optional
 from abc import ABC, abstractmethod
 
-from .commands.command import Command
+from .commands.command import Command  # type: ignore
+
 
 class Device(ABC):
     """
@@ -11,9 +11,11 @@ class Device(ABC):
     :param str dtype: Type of the device.
     :param str ipAddress: IP Address of the device.
     """
-    def __init__(self, name: str, dtype: str, executedCommand: str) -> None:
+    def __init__(self, name: str, dtype: str, ipAddress: str,
+                 executedCommand: str) -> None:
         self._name = name
         self._type = dtype
+        self._address = ipAddress
         self._executedCommand = executedCommand
 
     def name(self) -> str:
@@ -35,12 +37,13 @@ class Device(ABC):
         return self._address
 
     @abstractmethod
-    def read(self) -> float: 
+    def read(self) -> float:
         """
         Reads the device.
         :return: Device reading.
         """
         pass
+
 
 class DeviceAnalyzer(ABC):
     """
@@ -55,6 +58,7 @@ class DeviceAnalyzer(ABC):
         """
         pass
 
+
 class DeviceReadCommand(Command):
     """
     Command to read a Device.
@@ -62,8 +66,9 @@ class DeviceReadCommand(Command):
     :param device: Device object.
     :type device :class:`Device`
     """
-    def __init__(self,device: Device) -> None:
+    def __init__(self, device: Device) -> None:
         self.device = device
+
     def execute(self) -> None:
         """
         Reads the device.
@@ -73,7 +78,3 @@ class DeviceReadCommand(Command):
         ipAddress = self.device.connectionInfo()
         value = self.device.read()
         print(f"DeviceReadCommand: [{dtype}] {name}: {value} {ipAddress}")
-
-
-
-

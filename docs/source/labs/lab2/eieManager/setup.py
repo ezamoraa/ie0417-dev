@@ -82,7 +82,7 @@ setup(
     version=find_version('lib/device_commands/__init__.py'),
     package_dir={'': 'lib'},
     packages=find_packages('lib'),
-    include_package_data = True,
+    include_package_data=True,
 
     # Dependencies
     install_requires=find_requirements('requirements.txt'),
