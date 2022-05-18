@@ -1,9 +1,9 @@
 import json
 from typing import List, Dict
 
-from .commands.command import Command
-from .deviceFactory import DeviceFactory
-from .devices import Device, DeviceReadCommand
+from .commands.command import Command  # type: ignore
+from .deviceFactory import DeviceFactory  # type: ignore
+from .devices import Device, DeviceReadCommand  # type: ignore
 
 
 class DeviceManager:
@@ -44,13 +44,18 @@ class DeviceManager:
                     if device_type == "connected":
                         name = device_info["name"]
                         dtype = device_type
-                        self.devices[name] = self.device_factory(name, dtype)
+                        ipAddress = device_info["connectionInfo"]
+                        self.devices[name] = self.device_factory(name,
+                                                                 dtype,
+                                                                 ipAddress)
                     else:
                         if device_type == "wifiEnabled":
                             name = device_info["name"]
                             dtype = device_type
+                            ipAddress = device_info["connectionInfo"]
                             self.devices[name] = self.device_factory(name,
-                                                                     dtype)
+                                                                     dtype,
+                                                                     ipAddress)
         self._init_devices_per_type()
 
     def get_devices_types(self) -> List[str]:

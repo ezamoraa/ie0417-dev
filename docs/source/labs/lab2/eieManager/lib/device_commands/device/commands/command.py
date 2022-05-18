@@ -1,7 +1,7 @@
 import threading
 import queue
 from abc import ABC, abstractmethod
-from ratelimiter import RateLimiter
+from ratelimiter import RateLimiter  # type: ignore
 from typing import Optional
 
 

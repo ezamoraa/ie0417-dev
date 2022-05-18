@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from .commands.command import Command
+from .commands.command import Command  # type: ignore
 
 
 class Device(ABC):
@@ -11,9 +11,11 @@ class Device(ABC):
     :param str dtype: Type of the device.
     :param str ipAddress: IP Address of the device.
     """
-    def __init__(self, name: str, dtype: str, executedCommand: str) -> None:
+    def __init__(self, name: str, dtype: str, ipAddress: str,
+                 executedCommand: str) -> None:
         self._name = name
         self._type = dtype
+        self._address = ipAddress
         self._executedCommand = executedCommand
 
     def name(self) -> str:
