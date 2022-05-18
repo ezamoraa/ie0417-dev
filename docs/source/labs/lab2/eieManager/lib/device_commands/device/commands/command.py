@@ -1,9 +1,8 @@
 import threading
 import queue
 from abc import ABC, abstractmethod
-from ratelimiter import RateLimiter  # type: ignore
+from ratelimiter import RateLimiter
 from typing import Optional
-
 
 class Command(ABC):
     """

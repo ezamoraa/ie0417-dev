@@ -62,7 +62,7 @@ def parse_args(argv=None):
     )
     parser.add_argument(
         '-t', '--device_type',
-        default="wifiEnabled",
+        default="connected",
         help='Device type to read',
     )
 

@@ -37,9 +37,9 @@ def main():
     print("Test POST method adding devices: ")
     wait_enter()
     new_device = {
-            "name": "tv-alexaBuiltIn",
-            "commands": ["connected", "wired", "bluetooth"],
-            "connectionInfo": "127.0.0.1"
+            "name": "svr-Server",
+            "commands": ["connected", "wireless", "coreCPU"],
+            "connectionInfo": "127.0.5.1"
             }
     res = requests.post(f"{url}/devices", json=new_device)
     print_response(res)
