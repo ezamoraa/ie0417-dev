@@ -6,6 +6,7 @@ from .devices import Device
 from .connected import ConnectedDevice
 from .wifiEnabled import WifiEnabledDevice
 
+
 class DeviceFactory():
     """
     Factory that creates a device of a given type name
@@ -15,13 +16,14 @@ class DeviceFactory():
             "connected": ConnectedDevice,
             "wifiEnabled": WifiEnabledDevice,
         }
+
     @property
     def supported_types(self):
         """
         Returns the list of names for the supported device types.
         """
         return [dtype for dtype in self._device_type_to_cls.keys()]
-    
+
     def __call__(self, name: str, dtype: str) -> Device:
         """
         Creates the device.

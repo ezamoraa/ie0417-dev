@@ -1,4 +1,3 @@
-from device.commands import command
 from device.deviceManager import DeviceManager
 import json
 
@@ -9,4 +8,4 @@ with open(path, 'r') as f:
 device_manager = DeviceManager(path)
 
 typeDev = device_manager.get_devices_types()
-device_manager.get_device_names_per_type(_)
+device_manager.get_device_names_per_type()

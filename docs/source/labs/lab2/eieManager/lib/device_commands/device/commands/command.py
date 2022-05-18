@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 from ratelimiter import RateLimiter
 from typing import Optional
 
+
 class Command(ABC):
     """
     Generic command representation.

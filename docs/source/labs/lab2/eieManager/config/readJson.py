@@ -16,6 +16,3 @@ for i in file:
 print("Connected type devices: ", connectedDev)
 print("\n")
 print("WifiEnabled type devices: ", wifiEnabled)
-
-
-
