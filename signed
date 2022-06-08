@@ -1,0 +1,211 @@
+[33mcommit 20236c50fff35d9c8eb73fb62ac6c8b50180a9cd[m[33m ([m[1;36mHEAD -> [m[1;32mlab2-main-branch[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Mon Apr 11 11:25:53 2022 -0600
+
+    Enable PlantUML in Sphinx
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit df9c6e091413a469b70ae421868f2d20e60286bf[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Mon Apr 11 00:32:35 2022 -0600
+
+    Prepare dev repo
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 1370eabe48f9f8711bbc2a489b355592b9948d2f[m
+Merge: d3f7cd3 452d548
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Mon Apr 11 00:27:42 2022 -0600
+
+    Merge pull request #12 from ezamoraa/personal/ezamoraa/lab1
+    
+    Add documentation for lab 1
+
+[33mcommit 452d548bfb5b7d2a9d807c7c1bbe50cac134de44[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Mon Apr 11 06:21:30 2022 +0000
+
+    Add documentation for lab 1
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit d3f7cd324f934305e435c753e754f8ba4479e014[m
+Merge: 5d638b4 b36df20
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Fri Apr 8 18:08:40 2022 -0600
+
+    Merge pull request #11 from ezamoraa/ezamoraa/planning
+    
+    Add presentation for class 4
+
+[33mcommit b36df2072d1bd57b93cc32e9e4e9d588df2a8e42[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Sat Apr 9 00:06:35 2022 +0000
+
+    Add presentation for class 4
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 5d638b430e130cf1fd491b09741e1c0940a4a962[m
+Merge: 439029e b14c052
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Wed Apr 6 20:04:57 2022 -0600
+
+    Merge pull request #10 from ezamoraa/ezamoraa/planning
+    
+    Add presentation for class 3
+
+[33mcommit b14c0525cccf9bb41f4319ae4623b7d43d200c93[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Thu Apr 7 02:04:39 2022 +0000
+
+    Add presentation for class 3
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 439029e4fa1472162aa25f54fc3861726e6b16cd[m
+Merge: cc8a50d 9eb736c
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Mon Apr 4 02:27:04 2022 -0600
+
+    Merge pull request #9 from ezamoraa/ezamoraa/planning
+    
+    Add presentation for class 2
+
+[33mcommit 9eb736c4ab252f1988d9f4190f51ee3f0f492309[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Thu Mar 31 23:47:22 2022 +0000
+
+    Add presentation for class 2
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit cc8a50dc2cebf85c75e5bbc672ef80bf0582eb0d[m
+Merge: c566d45 4338312
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Sun Mar 27 20:15:14 2022 -0600
+
+    Merge pull request #8 from ezamoraa/ezamoraa/planning
+    
+    Add presentation for class 1
+
+[33mcommit 4338312c24a15643550ce05d23b7545081c21721[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Sat Mar 26 05:11:20 2022 +0000
+
+    Add presentation for class 1
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit c566d4540b6627e4f89dd2dca67a5385f9ac2216[m
+Merge: 5ae0bc2 54d6a7c
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Fri Mar 25 22:48:13 2022 -0600
+
+    Merge pull request #7 from ezamoraa/ezamoraa/planning
+    
+    More fixes to base dev docs
+
+[33mcommit 54d6a7c40ca0f7181ce2e94d19b1d4a08d3d843b[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Fri Mar 25 22:42:31 2022 -0600
+
+    More fixes to base dev docs
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 5ae0bc23d6a55e5ab6fbbfd1dbadaba07e3412d3[m
+Merge: 3812349 2b7de8f
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Fri Mar 25 22:33:09 2022 -0600
+
+    Merge pull request #6 from ezamoraa/ezamoraa/planning
+    
+    Minor fixes to documentation
+
+[33mcommit 2b7de8fb80e7d6e62416d1f1cf1bc2bdbc7ff753[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Fri Mar 25 22:07:18 2022 -0600
+
+    Minor fixes to documentation
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 3812349b052cb75426434eadf79d76229b136247[m
+Merge: 8bc0bb0 200d886
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Fri Mar 25 22:02:54 2022 -0600
+
+    Merge pull request #5 from ezamoraa/ezamoraa/planning
+    
+    Update documentation for base env
+
+[33mcommit 200d8862137d96ab21ff81dea2e6a3fad6530fd7[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Sat Mar 26 03:57:35 2022 +0000
+
+    Update documentation for base env
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 8bc0bb05c73dcf10f4c5bed6751653e59ade9bb1[m
+Merge: 1cf6d53 63b585d
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Fri Mar 25 21:21:35 2022 -0600
+
+    Merge pull request #4 from ezamoraa/ezamoraa/planning
+    
+    Fix course name and minor things
+
+[33mcommit 63b585dc39d60f3ae4b5dad15395492b7a26d24a[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Fri Mar 25 20:55:49 2022 -0600
+
+    Fix course name and minor things
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 1cf6d5326a77e835017c3a7a78b60791ff10c3a2[m
+Merge: 5f4d479 849636a
+Author: ezamoraa <100617324+ezamoraa@users.noreply.github.com>
+Date:   Sun Mar 6 23:31:39 2022 -0600
+
+    Merge pull request #3 from ezamoraa/ezamoraa/planning
+    
+    Add Jupyter RISE and dummy ipynb presentation
+
+[33mcommit 849636a8baa8171b147edba3ff6f1cae88aa0251[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Sun Mar 6 23:18:16 2022 -0600
+
+    Add Jupyter RISE and dummy ipynb presentation
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 5f4d479d71669b1ce6594541923e813b4d9632f7[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Sat Mar 5 09:47:41 2022 -0600
+
+    Add course folder and initial schedule IC 2022
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 89dfbba5ff170c802da704f1771771b52fd3d9a3[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Sat Mar 5 09:46:26 2022 -0600
+
+    Add basic development environment
+    
+    This is based on the open-hw-dev repo
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
+
+[33mcommit 7dcc78ff7bcbe2d368152cb35716701ab8c63b89[m
+Author: Esteban Zamora <esteban.zamora.al@gmail.com>
+Date:   Fri Feb 18 20:11:11 2022 -0600
+
+    Initial commit
+    
+    Signed-off-by: Esteban Zamora <esteban.zamora.al@gmail.com>
