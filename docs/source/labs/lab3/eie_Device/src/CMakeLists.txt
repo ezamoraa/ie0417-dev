@@ -1,0 +1,1 @@
+ADD_LIB_DIRS(Device TransportClient TransportServer)
