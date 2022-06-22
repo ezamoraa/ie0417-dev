@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: eie-commands
+Version: 0.0.1
+Summary: eieManager is a package for laboratory #2 of IE0417 course @ EIE, UCR
+Home-page: https://ie0417-dev-b92861.readthedocs.io/en/latest/labs/labs.html
+Author: Oscar Fallas Codero
+Author-email: oscarsteven.fallas@ucr.ac.cr
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+# Sensor commands package
+
+This is an example package for the sensor commands modules. 
+
+

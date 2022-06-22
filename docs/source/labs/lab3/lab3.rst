@@ -2,7 +2,7 @@
 Laboratorio 1
 *************
 +---------------+--------------+
-| Estudiante    |  Carnet      |
+| Estudiantes    |  Carnet      |
 +---------------+--------------+
 || Oscar Fallas | B92861       |
 +---------------+--------------+
@@ -18,7 +18,7 @@ Utilice conceptos de planeamiento a largo plazo con metodologías Agile (Quiz 2)
 
 Paso 1:
 ^^^^^^^
-
+ 
 Para iniciar con el proyecto se tiene la idea general de este ultimo: Se tiene un proyecto en el cual se tendrá 
 dos secciones importantes el eieManager que se encarga de comunicarse con los dispositivos de la empresa,este eieManager debe
 de servir como API es decir,sirve como un intermediario entre los dispositivos a controlar y el cliente,
